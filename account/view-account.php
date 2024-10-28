@@ -16,7 +16,7 @@ if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || strtolower($_SERVER['HTTP_X_REQ
     <div class="row">
         <div class="col-12">
             <div class="page-title-box">
-                <h4 class="page-title">Products</h4>
+                <h4 class="page-title">Accounts</h4>
             </div>
         </div>
     </div>
