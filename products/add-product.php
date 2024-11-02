@@ -41,7 +41,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     } else if ($price < 1){
         $priceErr = 'Price must be greater than 0.';
     }
-
+  $imageFileType = strtolower(pathinfo($image, PATHINFO_EXTENSION));
+    if(empty($image)){
+        $imageErr = 'Product image is required.';
+    }else if(!in_array($imageFileType, $allowedType)){
+        $imageErr = 'Accepted files are jpg, jpeg, and png only.';
+    }
+    else if($_FILES['product_image']['size'] > 5 * 1024 * 1024){ // this block of code checks if the image is grater than 5mb
+        $imageErr = 'Image must not exceed 5mb.';
+    }
     $imageFileType = strtolower(pathinfo($image, PATHINFO_EXTENSION));
     if(empty($image)){
         $imageErr = 'Product image is required.';
